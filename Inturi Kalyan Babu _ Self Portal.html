@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inturi Kalyan Babu | Self Portal</title>
+<style>
+  :root {
+    box-sizing: border-box;
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #1d2433;
+    --muted: #5b6475;
+    --accent: #2563eb;
+    --accent-soft: #e6eefc;
+    --border: #e2e7f0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1420;
+      --card: #171e2d;
+      --text: #e8ecf5;
+      --muted: #9aa4b8;
+      --accent: #6ea8ff;
+      --accent-soft: #1d2a44;
+      --border: #26304a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1420;
+    --card: #171e2d;
+    --text: #e8ecf5;
+    --muted: #9aa4b8;
+    --accent: #6ea8ff;
+    --accent-soft: #1d2a44;
+    --border: #26304a;
+  }
+  * { margin: 0; padding: 0; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100%;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; }
+  header.hero {
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 20px;
+  }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; }
+  .hero .role { font-size: 1.1rem; opacity: 0.95; margin-top: 4px; }
+  .contact { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .contact a, .contact span {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+  }
+  .contact a:hover { background: rgba(255,255,255,0.3); }
+  nav.toc {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--bg);
+    padding: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  nav.toc a {
+    color: var(--accent);
+    background: var(--accent-soft);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+  }
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  section.card h2 {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+  .item { padding: 12px 0; border-top: 1px solid var(--border); }
+  .item:first-of-type { border-top: none; padding-top: 0; }
+  .item-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 12px;
+  }
+  .item-title { font-weight: 600; font-size: 1.05rem; }
+  .item-sub { color: var(--muted); font-size: 0.95rem; }
+  .item-date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+  ul.points { margin: 8px 0 0 20px; }
+  ul.points li { margin-bottom: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.82rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .summary { font-size: 1.02rem; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .skills-grid h3 { font-size: 0.95rem; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+  .cert-list li, .ach-list li { margin-bottom: 10px; margin-left: 20px; }
+  .cert-list li strong, .ach-list li strong { display: block; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 24px; }
+  @media (max-width: 560px) {
+    section.card { padding: 18px; }
+    header.hero { padding: 26px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Inturi Kalyan Babu</h1>
+    <div class="role">Product Operations Associate</div>
+    <div class="contact">
+      <a href="mailto:inturikalyanbabu@gmail.com">inturikalyanbabu@gmail.com</a>
+      <a href="tel:+917075831533">+91 70758 31533</a>
+      <a href="#" title="Add your LinkedIn URL">LinkedIn</a>
+      <a href="#" title="Add your GitHub URL">GitHub</a>
+      <span>Hyderabad, India</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#achievements">Achievements</a>
+  </nav>
+
+  <section class="card" id="summary">
+    <h2>PROFESSIONAL SUMMARY</h2>
+    <p class="summary">Product Operations Associate with hands-on experience supporting EdTech product development, data-driven decision-making, and cross-functional coordination. Strong technical foundation in Python, SQL, and machine learning from academic and personal projects; skilled at translating user data into actionable product improvements.</p>
+  </section>
+
+  <section class="card" id="experience">
+    <h2>EXPERIENCE</h2>
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <div class="item-title">Associate Product Operations</div>
+          <div class="item-sub">Greater Than Educational Technologies · Remote</div>
+        </div>
+        <div class="item-date">Aug 2025 – Present</div>
+      </div>
+      <ul class="points">
+        <li>Partner with engineering, design, and content teams to support product development and streamline operational workflows across the EdTech platform.</li>
+        <li>Analyze user data and feedback to identify usability gaps, informing product decisions that improve learning outcomes.</li>
+        <li>Own documentation and process optimization for product operations, reducing coordination overhead across teams.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" id="projects">
+    <h2>PROJECTS</h2>
+    <div class="item">
+      <div class="item-title">Prediction of Obesity Risk</div>
+      <ul class="points">
+        <li>Built a predictive model estimating individual obesity risk from lifestyle, genetic, and environmental factors.</li>
+        <li>Applied machine learning algorithms to health metrics and behavioral data to generate risk scores.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span></div>
+    </div>
+    <div class="item">
+      <div class="item-title">Traffic Violation Detector</div>
+      <ul class="points">
+        <li>Built a real-time system using CCTV footage and image processing to detect and classify traffic violations.</li>
+        <li>Applied computer vision and ML techniques to automatically identify rule breaches from live video feeds.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Machine Learning</span></div>
+    </div>
+    <div class="item">
+      <div class="item-title">Gesture Recognition for Regional Languages</div>
+      <ul class="points">
+        <li>Built a real-time sign-language recognition system for regional languages, including Telugu and Tamil.</li>
+        <li>Trained ML models to classify hand gestures captured via live webcam feed.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Machine Learning</span></div>
+    </div>
+  </section>
+
+  <section class="card" id="education">
+    <h2>EDUCATION</h2>
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <div class="item-title">SRM Institute of Science and Technology</div>
+          <div class="item-sub">Bachelor of Technology in Computer Science Engineering · Chennai, India</div>
+        </div>
+        <div class="item-date">Sept 2021 – May 2025<br>CGPA: 7.93 / 10</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <div class="item-title">Narayana Junior College</div>
+          <div class="item-sub">Board of Intermediate Education, Andhra Pradesh · Vijayawada, India</div>
+        </div>
+        <div class="item-date">Jun 2019 – Jul 2021<br>837 / 1000</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <div class="item-title">Kennedy High School</div>
+          <div class="item-sub">Board of Secondary Education, Andhra Pradesh · Vijayawada, India</div>
+        </div>
+        <div class="item-date">Apr 2019<br>CGPA: 9.7 / 10</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="skills">
+    <h2>TECHNICAL SKILLS</h2>
+    <div class="skills-grid">
+      <div>
+        <h3>Languages</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">SQL</span><span class="tag">DAX (Power BI)</span></div>
+      </div>
+      <div>
+        <h3>Tools &amp; Platforms</h3>
+        <div class="tags"><span class="tag">VS Code</span><span class="tag">Jupyter Notebook</span><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">Linux</span><span class="tag">Windows</span></div>
+      </div>
+      <div>
+        <h3>Core Concepts</h3>
+        <div class="tags"><span class="tag">DBMS</span><span class="tag">Data Structures &amp; Algorithms</span><span class="tag">Operating Systems</span><span class="tag">Computer Networking</span><span class="tag">OOP</span><span class="tag">Project Management</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="certifications">
+    <h2>CERTIFICATIONS</h2>
+    <ul class="cert-list">
+      <li><strong>AWS Academy Machine Learning</strong>Foundations of ML on AWS and large-scale dataset handling</li>
+      <li><strong>Cisco Network Basics</strong>Foundational networking concepts and protocols</li>
+      <li><strong>IBM/Coursera Cyber Attacks</strong>Threat management and security protocols</li>
+      <li><strong>Great Learning Linux Tutorial</strong>Linux administration and open-source tooling</li>
+      <li><strong>Oracle Autonomous Database Associate</strong>Deploying and managing Oracle databases</li>
+    </ul>
+  </section>
+
+  <section class="card" id="achievements">
+    <h2>ACHIEVEMENTS &amp; LEADERSHIP</h2>
+    <ul class="ach-list">
+      <li><strong>SRM Founders Scholarship</strong>Ranked 403 in SRMJEE; awarded full tuition waiver, 2021–2025.</li>
+      <li><strong>Finance Head, Aaruush (SRMIST)</strong>Managed the annual event budget and led a team that secured event sponsorships.</li>
+      <li><strong>Campus Ambassador, Lev Yug</strong>Drove brand awareness and student engagement on campus.</li>
+    </ul>
+  </section>
+
+  <footer>© Inturi Kalyan Babu</footer>
+</div>
+</body>
+</html>
