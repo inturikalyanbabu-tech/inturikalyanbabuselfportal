@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalyan Babu Inturi | Product Operations & Tech Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        },
+                        neutral: {
+                            850: '#1f242d',
+                            900: '#111827',
+                            950: '#0b0f17'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-neutral-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav bg-white/80 dark:bg-neutral-950/80 border-b border-slate-200/80 dark:border-neutral-800/80 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo / Brand Title -->
+            <a href="#hero" class="text-lg font-bold tracking-tight text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-500 transition-colors flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-500 inline-block"></span>
+                <span>Kalyan Babu Inturi</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">About</a>
+                <a href="#experience" class="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">Experience</a>
+                <a href="#projects" class="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">Skills</a>
+                <a href="#contact" class="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions (Theme Toggle & Mobile Menu Btn) -->
+            <div class="flex items-center space-x-4">
+                <button id="themeToggle" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-neutral-800 transition-colors" aria-label="Toggle Theme">
+                    <i id="themeIcon" class="fas fa-moon text-lg"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-slate-900 hover:bg-slate-800 dark:bg-brand-600 dark:hover:bg-brand-500 rounded-lg shadow-sm transition-all duration-200 transform active:scale-95">
+                    Let's Connect
+                </a>
+                <!-- Mobile menu toggle -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 focus:outline-none" aria-label="Toggle Menu">
+                    <i id="menuIcon" class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-neutral-800 bg-white/95 dark:bg-neutral-950/95 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#about" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">About</a>
+            <a href="#experience" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Experience</a>
+            <a href="#projects" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Projects</a>
+            <a href="#skills" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Skills</a>
+            <a href="#contact" class="block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-16 flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-20 lg:py-28 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <!-- Status Tag -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200 dark:bg-brand-950/50 dark:text-brand-400 dark:border-brand-900/50 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 badge-pulse"></span>
+                        Optimizing Digital Experiences & Operations
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                        Product Operations Specialist & Tech Enthusiast Building <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-emerald-500 dark:from-brand-400 dark:to-emerald-300">Impactful Systems</span>.
+                    </h1>
+
+                    <!-- Paragraph Subtext -->
+                    <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                        Passionate about bridging product design, operational efficiency, and data-driven execution. Driven by creative growth, problem-solving, and building intuitive solutions that deliver measurable value.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="mt-8 flex flex-wrap items-center gap-4">
+                        <a href="#projects" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-brand-600 dark:hover:bg-brand-500 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                            Explore Projects <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 dark:bg-neutral-850 dark:text-slate-200 dark:hover:bg-neutral-800 rounded-xl border border-slate-200 dark:border-neutral-700 transition-all">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subtle Decorative Grid Background -->
+            <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        </section>
+
+        <!-- About / Creative Philosophy Section -->
+        <section id="about" class="py-16 bg-slate-100/60 dark:bg-neutral-900/40 border-y border-slate-200/60 dark:border-neutral-800/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-bold mb-2">Core Ethos</h2>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Continuous Growth through Data & Innovation</h3>
+                    </div>
+                    <div class="md:col-span-2 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p>
+                            My approach combines structured analytical thinking with creative flexibility. I thrive in environments where user feedback and data intersect, transforming complex operational hurdles into seamless, human-centric workflows.
+                        </p>
+                        <p>
+                            From standardizing educational technology platforms to exploring Web3 paradigms, embedded systems, and automated ML pipelines, I aim to create scalable, accessible, and high-quality digital products.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-bold mb-2">Career Journey</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Professional Experience</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">Delivering operational excellence, user experience enhancements, and technology leadership.</p>
+                </div>
+
+                <div class="relative border-l border-slate-200 dark:border-neutral-800 ml-3 md:ml-6 space-y-12">
+                    <!-- Experience Item 1 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-white dark:bg-neutral-950 border-2 border-brand-500 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-briefcase text-xs"></i>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-neutral-800 shadow-sm transition-all hover:shadow-md">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">Product Operations Associate</h4>
+                                    <span class="text-brand-600 dark:text-brand-400 font-medium text-sm">Narayana's The Learning App</span>
+                                </div>
+                                <span class="inline-block mt-2 sm:mt-0 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300 w-fit">
+                                    EdTech Operations
+                                </span>
+                            </div>
+                            <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                                <li><strong>User Workflow Optimization:</strong> Streamlined operational pipelines to reduce bottlenecks across mobile and web platforms, enhancing user satisfaction for thousands of learners.</li>
+                                <li><strong>Cross-Functional Collaboration:</strong> Partnered closely with Product Managers, UX Designers, and Engineering teams to transform user insights into functional product updates.</li>
+                                <li><strong>Data-Driven UX Strategy:</strong> Analyzed platform engagement metrics to identify usability frictions and propose iterative UI/UX feature enhancements.</li>
+                                <li><strong>Scalable Content Delivery:</strong> Supported system standardization for educational content distribution across multiple digital touchpoints.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-white dark:bg-neutral-950 border-2 border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-500 group-hover:border-brand-500 group-hover:text-brand-500 group-hover:scale-110 transition-all">
+                            <i class="fas fa-chart-line text-xs"></i>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-neutral-800 shadow-sm transition-all hover:shadow-md">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">Data & Operations / Project Management</h4>
+                                    <span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Tech & Innovation Initiatives</span>
+                                </div>
+                                <span class="inline-block mt-2 sm:mt-0 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300 w-fit">
+                                    Data & Web3 Focus
+                                </span>
+                            </div>
+                            <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                                <li><strong>Data Analysis & Insights:</strong> Processed and structured complex datasets using Python (Pandas/NumPy) to inform strategic decisions and optimize system operational workflows.</li>
+                                <li><strong>Web3 & Emerging Tech Management:</strong> Researched and coordinated open-source tech projects, focusing on decentralized systems and modern tech stack integration.</li>
+                                <li><strong>Process Automation:</strong> Designed end-to-end automation scripts and IoT prototypes to eliminate repetitive manual processes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Showcase Section -->
+        <section id="projects" class="py-20 bg-slate-100/60 dark:bg-neutral-900/40 border-t border-slate-200/60 dark:border-neutral-800/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-bold mb-2">Portfolio Showcase</h2>
+                        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Featured Projects</h3>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="projectFilters">
+                        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-white dark:bg-brand-600 dark:text-white transition-all shadow-sm">All</button>
+                        <button data-filter="tech" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 dark:bg-neutral-800 dark:text-slate-300 dark:hover:bg-neutral-700 border border-slate-200 dark:border-neutral-700 transition-all">Tech & Code</button>
+                        <button data-filter="design" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 dark:bg-neutral-800 dark:text-slate-300 dark:hover:bg-neutral-700 border border-slate-200 dark:border-neutral-700 transition-all">Visual & Design</button>
+                        <button data-filter="hardware" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 dark:bg-neutral-800 dark:text-slate-300 dark:hover:bg-neutral-700 border border-slate-200 dark:border-neutral-700 transition-all">Hardware / IoT</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projectsContainer">
+                    
+                    <!-- Card 1: Gesture Classifier -->
+                    <div class="project-card group bg-white dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="tech">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 text-lg">
+                                    <i class="fas fa-brain"></i>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Machine Learning</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                                Telugu & Tamil Gesture Classification Dataset
+                            </h4>
+                            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Developed a gesture classification system utilizing Random Forest algorithms on custom gesture datasets. Focused on enhancing digital accessibility and non-verbal communication frameworks for regional languages.
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Python</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Random Forest</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Accessibility</span>
+                            </div>
+                        </div>
+                        <div class="px-6 sm:px-8 py-4 bg-slate-50 dark:bg-neutral-850/50 border-t border-slate-100 dark:border-neutral-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 dark:text-slate-400">ML & Regional Accessibility</span>
+                            <button onclick="openModal('gesture')" class="text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400 flex items-center gap-1">
+                                View Details <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Arduino Rain System -->
+                    <div class="project-card group bg-white dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hardware">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400 text-lg">
+                                    <i class="fas fa-microchip"></i>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">IoT & Hardware</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                                Arduino Rain-Sensing Automated System
+                            </h4>
+                            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Engineered an embedded smart physical automation mechanism using C++, rain sensors, and servo motors to trigger real-time protective physical adjustments upon detecting rainfall.
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Arduino C++</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Servo Actuators</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Sensors</span>
+                            </div>
+                        </div>
+                        <div class="px-6 sm:px-8 py-4 bg-slate-50 dark:bg-neutral-850/50 border-t border-slate-100 dark:border-neutral-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Embedded System & Hardware</span>
+                            <button onclick="openModal('arduino')" class="text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400 flex items-center gap-1">
+                                View Details <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Educational App & Platform Interfaces -->
+                    <div class="project-card group bg-white dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="tech">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950/60 dark:text-amber-400 text-lg">
+                                    <i class="fas fa-mobile-screen"></i>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Web & Mobile UI</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                                Educational App & Platform Interfaces
+                            </h4>
+                            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Architectural layout design and frontend development for Inturi High School web portals and Android app interfaces. Prioritized intuitive navigation, high legibility, and responsive responsiveness.
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">HTML5/CSS3</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Android UI</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">UX Architecture</span>
+                            </div>
+                        </div>
+                        <div class="px-6 sm:px-8 py-4 bg-slate-50 dark:bg-neutral-850/50 border-t border-slate-100 dark:border-neutral-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Inturi High School Platform</span>
+                            <button onclick="openModal('edtech')" class="text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400 flex items-center gap-1">
+                                View Details <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Kagazi Brand Identity -->
+                    <div class="project-card group bg-white dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="design">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-950/60 dark:text-purple-400 text-lg">
+                                    <i class="fas fa-palette"></i>
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Branding & Design</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                                Kagazi Brand Identity & Visual Assets
+                            </h4>
+                            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Minimalist visual branding inspired by the art of origami. Created clean vector typography, marketing collaterals, and cohesive brand design guides emphasizing modern elegance.
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Vector Design</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Brand Identity</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700 dark:bg-neutral-800 dark:text-slate-300">Typography</span>
+                            </div>
+                        </div>
+                        <div class="px-6 sm:px-8 py-4 bg-slate-50 dark:bg-neutral-850/50 border-t border-slate-100 dark:border-neutral-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Origami-Inspired Branding</span>
+                            <button onclick="openModal('kagazi')" class="text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400 flex items-center gap-1">
+                                View Details <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Skills & Expertise Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center max-w-2xl mx-auto">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-bold mb-2">Capabilities</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Core Skills & Expertise</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">A versatile blend of product management, technical engineering, and operational execution.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Skill Group 1 -->
+                    <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-slate-200/80 dark:border-neutral-800 shadow-sm hover:border-brand-500/50 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-sliders"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3">Product Operations</h4>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Agile Methodology</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Workflow Optimization</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Cross-Functional Lead</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> User Feedback Loops</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group 2 -->
+                    <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-slate-200/80 dark:border-neutral-800 shadow-sm hover:border-brand-500/50 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3">Data & Analytics</h4>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Python & Pandas</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Random Forest ML</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Process Analytics</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> LaTeX Documentation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group 3 -->
+                    <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-slate-200/80 dark:border-neutral-800 shadow-sm hover:border-brand-500/50 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3">Web & Mobile</h4>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> HTML5 & CSS3</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> JavaScript (ES6+)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Android UI Design</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Responsive Layouts</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group 4 -->
+                    <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-slate-200/80 dark:border-neutral-800 shadow-sm hover:border-brand-500/50 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3">Hardware & Systems</h4>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Arduino Embedded C++</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> IoT Sensors Integration</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Microcontrollers</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-xs text-brand-500"></i> Hardware Prototyping</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-100/60 dark:bg-neutral-900/40 border-t border-slate-200/60 dark:border-neutral-800/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Contact Details Info -->
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-bold mb-2">Get In Touch</h2>
+                        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">Let's build impactful experiences together.</h3>
+                        <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Whether you'd like to discuss product strategy, operational efficiency, technology collaborations, or new opportunities—feel free to reach out.
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+                            <a href="mailto:inturikalyanbabu@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 hover:border-brand-500 transition-all">
+                                <div class="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Direct Email</div>
+                                    <div class="text-sm font-semibold text-slate-900 dark:text-white">inturikalyanbabu@gmail.com</div>
+                                </div>
+                            </a>
+
+                            <div class="flex gap-4">
+                                <a href="https://linkedin.com" target="_blank" class="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-all text-sm font-medium">
+                                    <i class="fab fa-linkedin text-base"></i> LinkedIn
+                                </a>
+                                <a href="https://github.com" target="_blank" class="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-all text-sm font-medium">
+                                    <i class="fab fa-github text-base"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Professional Statement -->
+                        <div class="mt-8 p-4 rounded-xl bg-brand-50/50 dark:bg-brand-950/20 border border-brand-200/60 dark:border-brand-900/40">
+                            <p class="text-xs text-brand-800 dark:text-brand-300 leading-relaxed font-medium">
+                                <i class="fas fa-quote-left mr-1"></i> Dedicated to continuous learning, cross-functional innovation, and empowering digital platforms that solve real-world problems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white dark:bg-neutral-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Name</label>
+                                <input type="text" id="name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-neutral-950 border border-slate-200 dark:border-neutral-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white text-sm transition-all">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
+                                <input type="email" id="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-neutral-950 border border-slate-200 dark:border-neutral-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white text-sm transition-all">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Message</label>
+                                <textarea id="message" rows="4" required placeholder="How can I help you?" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-neutral-950 border border-slate-200 dark:border-neutral-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white text-sm transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="w-full py-3.5 px-6 rounded-xl font-semibold text-sm text-white bg-slate-900 hover:bg-slate-800 dark:bg-brand-600 dark:hover:bg-brand-500 transition-all shadow-md active:scale-98">
+                                Send Message
+                            </button>
+                        </form>
+
+                        <!-- Notification Box -->
+                        <div id="formSuccess" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-900 text-emerald-800 dark:text-emerald-300 text-xs font-medium text-center">
+                            Thank you! Your message has been sent successfully.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm">
+        <div class="bg-white dark:bg-neutral-900 rounded-2xl max-w-xl w-full p-6 sm:p-8 border border-slate-200 dark:border-neutral-800 shadow-2xl relative transform transition-all">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                <i class="fas fa-xmark text-lg"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Content inserted dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-white dark:bg-neutral-950 border-t border-slate-200 dark:border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs text-slate-500 dark:text-slate-400">
+                © <span id="year"></span> Kalyan Babu Inturi. Built with focus on impact & creative growth.
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-slate-500 dark:text-slate-400">
+                <a href="#hero" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set Year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        // Initialize theme based on preference or system settings
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+
+        // Close mobile drawer on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            });
+        });
+
+        // Interactive Project Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update button active styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-white', 'dark:bg-brand-600');
+                    b.classList.add('bg-white', 'text-slate-700', 'dark:bg-neutral-800', 'dark:text-slate-300');
+                });
+                btn.classList.remove('bg-white', 'text-slate-700', 'dark:bg-neutral-800', 'dark:text-slate-300');
+                btn.classList.add('bg-slate-900', 'text-white', 'dark:bg-brand-600');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project Modal Data & Handlers
+        const projectDetails = {
+            gesture: {
+                title: "Telugu & Tamil Gesture Classification Dataset",
+                category: "Machine Learning & Accessibility",
+                description: "This project addresses accessibility gaps for non-verbal communicators in regional languages. By collecting, pre-processing, and classifying regional sign gesture data using Random Forest classification models, the project demonstrates high predictive accuracy and efficient feature engineering.",
+                highlights: ["Scikit-learn / Random Forest Model", "Custom Feature Engineering & Data Cleansing", "Focused on South Indian Regional Languages"]
+            },
+            arduino: {
+                title: "Arduino Rain-Sensing Automated System",
+                category: "IoT & Hardware Automation",
+                description: "A hardware-software embedded system designed to automate physical protection mechanisms against unexpected weather events. Using Arduino C++, rain sensor sensors trigger high-torque servo motors to instantly shield sensitive equipment.",
+                highlights: ["Low-Latency Microcontroller Firmware", "Analog Rain Sensor Calibration", "Reliable Hardware-Software Integration"]
+            },
+            edtech: {
+                title: "Educational App & Platform Interfaces",
+                category: "Web & Mobile UI/UX",
+                description: "Frontend architecture and user-centric platform design for Inturi High School web interfaces and mobile user touchpoints. Focused on reducing friction for students and educators during daily coursework interaction.",
+                highlights: ["Responsive HTML5/CSS3 Framework", "Clean Information Hierarchy", "Optimized Mobile Navigation Touch Targets"]
+            },
+            kagazi: {
+                title: "Kagazi Brand Identity & Visual Assets",
+                category: "Branding & Visual Design",
+                description: "A modern visual identity inspired by origami craftsmanship. Created cohesive vector graphics, visual identity rules, color guidelines, and marketing touchpoints embodying simplicity and structural elegance.",
+                highlights: ["Origami-Inspired Vector Typography", "Minimalist Palette System", "Complete Brand Identity Guidelines"]
+            }
+        };
+
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(key) {
+            const data = projectDetails[key];
+            if (!data) return;
+
+            modalContent.innerHTML = `
+                <span class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">${data.category}</span>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1 mb-4">${data.title}</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">${data.description}</p>
+                <div class="border-t border-slate-100 dark:border-neutral-800 pt-4">
+                    <h5 class="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-2">Key Highlights</h5>
+                    <ul class="space-y-1.5">
+                        ${data.highlights.map(h => `<li class="text-xs text-slate-700 dark:text-slate-300 flex items-center gap-2"><i class="fas fa-check text-brand-500"></i> ${h}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Close modal when clicking backdrop
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Contact Form Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const successBox = document.getElementById('formSuccess');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                successBox.classList.remove('hidden');
+                document.getElementById('contactForm').reset();
+
+                setTimeout(() => {
+                    successBox.classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
